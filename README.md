@@ -1,144 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+import java.util.Scanner;
 
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+public class ResumeBuilder {
+    public static void main(String[] args) {
+        Resume resume = new Resume();
+        Scanner scanner = new Scanner(System.in);
 
-        header {
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(rgba(105, 74, 74, 0.8), rgba(36, 34, 34, 0.2)), url("Background.jpg");
-            background-size: cover;
-        }
+        System.out.println("Welcome to the Resume Builder!");
+        System.out.println("Please enter your personal information:");
 
-        nav {
-            width: 100%;
-            height: 100px;
-            background-size: cover;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            font-family: sans-serif;
-        }
+        System.out.print("Full Name: ");
+        resume.setFullName(scanner.nextLine());
 
-        .logo {
-            font-size: 2em;
-            letter-spacing: 2px;
+        System.out.print("Address: ");
+        resume.setAddress(scanner.nextLine());
 
-        }
+        System.out.print("Phone Number: ");
+        resume.setPhoneNumber(scanner.nextLine());
 
-        .Menu a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 20px;
-            position: relative;
-        }
+        System.out.print("Email: ");
+        resume.setEmail(scanner.nextLine());
 
-        .Menu a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            border-bottom: 2px solid orange;
-            transition: 0.4s linear;
-        }
+        System.out.println("Please enter your education information:");
 
-        .Menu a:hover:before {
-            width: 90%;
-        }
+        System.out.print("Degree: ");
+        resume.setDegree(scanner.nextLine());
 
-        .Register a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 20px;
-            background: orange;
-            border-radius: 5px;
-            transition: 0.4s linear;
-        }
+        System.out.print("Major: ");
+        resume.setMajor(scanner.nextLine());
 
-        .Register a:hover {
-            background: transparent;
-            border: 1px solid red;
-        }
+        System.out.print("University: ");
+        resume.setUniversity(scanner.nextLine());
 
-        .h-txt {
-            max-width: 650px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
+        System.out.print("Graduation Year: ");
+        resume.setGraduationYear(scanner.nextLine());
 
-        .h-txt span {
-            letter-spacing: 5px;
-        }
+        System.out.println("Please enter your work experience:");
 
-        .h-txt h1 {
-            font-size: 3.5em;
-        }
+        System.out.print("Job Title: ");
+        resume.setJobTitle(scanner.nextLine());
 
-        .h-txt a {
-            text-decoration: none;
-            background: orange;
-            color: white;
-            padding: 15px, 25px;
-            letter-spacing: 5px;
-            transition: 0.4s linear;
-        }
+        System.out.print("Company: ");
+        resume.setCompany(scanner.nextLine());
 
-        .h-txt a:hover {
-            background: transparent;
-            border: 1px solid red;
-        }
-    </style>
-</head>
+        System.out.print("Job Description: ");
+        resume.setJobDescription(scanner.nextLine());
 
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <b>Oasis Infobyte</b>
-            </div>
-            <div class="Menu">
-                <a href="#"><b>Home</b></a>
-                <a href="#"><b>About</b></a>
-                <a href="#"><b>Services</b></a>
-                <a href="#"><b>Contact Us</b></a>
-            </div>
-            <div class="Register">
-                <a href="#">Register</a>
-        </nav>
-        <section class="h-txt">
-            <h1><b>LANDING PAGE</b></h1>
-            <h2><b>By Swapnil Nimbalkar @Oasis Infobyte intership</b></h2>
-            <br>
-            <h3><b>A landing page is one of the best web development projects for begineers.</b></h3>
-            <a href="#"><b>Intership</b></a>
-        </section>
-    </header>
-</body>
+        System.out.print("Start Date: ");
+        resume.setStartDate(scanner.nextLine());
 
-<footer>
-    <p><a href="© Copyright OASIS INFOBYTE. All Rights Reserved Designed By Team OASIS" </a></p>
-</footer>
+        System.out.print("End Date: ");
+        resume.setEndDate(scanner.nextLine());
 
-</html>
+        System.out.println("Resume Successfully Built!");
+        System.out.println(resume);
+    }
+}
+
+class Resume {
+    private String fullName;
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String degree;
+    private String major;
+    private String university;
+    private String graduationYear;
+    private String jobTitle;
+    private String company;
+    private String jobDescription;
+    private String startDate;
+    private String endDate;
+
+    public void setFullName(String fullName) { this.fullName = fullName; }
+    public void setAddress(String address) { this.address = address; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public void setEmail(String email) { this.email = email; }
+    public void setDegree(String degree) { this.degree = degree; }
+    public void setMajor(String major) { this.major = major; }
+    public void setUniversity(String university) { this.university = university; }
+    public void setGraduationYear(String graduationYear) { this.graduationYear = graduationYear; }
